@@ -4,13 +4,15 @@ Synology Monitoring Plugin.  Collects CPU, Memory, Heat, HDD Information and net
 This plugin was based on the plugin by febalci
 
 New version:
-Added network load of NAS. The bonded ethernet port 1 and 2 is used.
+Added network load of NAS. The bonded ethernet port 1 and 2 is used.<br>
 If there is a need for monitoring ethernet port 1 as well I can add it, just ask.
 
 
 Installation:
-pysnmp Python3 module should be installed first
-pip3 install pysnmp
+The Python3 module pysnmp should be installed first<br>
+pip3 install pysnmp<br>
+
+cp plugin.py to domoticz/plugins/synology folder and configure in domoticz.<br>
 
 
 Configuration:
