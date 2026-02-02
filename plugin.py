@@ -275,18 +275,20 @@ class BasePlugin:
             newIn= int(getSNMPvalue(self.synoIP,self.snmpBondIn,self.synoCommunity))
             if(self.bondIn==0):
                 self.bondIn=newIn
-            delta=newIn-self.bondIn
-            Domoticz.Debug('Bond in: '+str(newIn)+' delta:'+str(delta) )
-            self.bondIn=newIn
-            UpdateDevice(14,0,delta/(60 * int(Parameters["Mode4"]) *1.024))   #307200 = pollcount (5 min) x 60 sec *1024 bytes
+            else:    
+                delta=newIn-self.bondIn
+                Domoticz.Debug('Bond in: '+str(newIn)+' delta:'+str(delta) )
+                self.bondIn=newIn
+                UpdateDevice(14,0,delta/(60 * int(Parameters["Mode4"]) *1.024))   #307200 = pollcount (5 min) x 60 sec *1024 bytes
             
             newOut=int(getSNMPvalue(self.synoIP,self.snmpBondOut,self.synoCommunity))
             if(self.bondOut==0):
                 self.bondOut=newOut
-            delta=newOut-self.bondOut
-            Domoticz.Debug('Bond out: '+str(newOut)+' delta:'+str(delta))
-            self.bondOut=newOut
-            UpdateDevice(15,0,delta/(60 * int(Parameters["Mode4"]) *1.024))
+            else:    
+                delta=newOut-self.bondOut
+                Domoticz.Debug('Bond out: '+str(newOut)+' delta:'+str(delta))
+                self.bondOut=newOut
+                UpdateDevice(15,0,delta/(60 * int(Parameters["Mode4"]) *1.024))
 
             self.pollCount = 0 #Reset Pollcount
         else:
