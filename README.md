@@ -1,7 +1,7 @@
 # Domoticz-Synology-Plugin
 Synology Monitoring Plugin.  Collects CPU, Memory, Heat, HDD Information and network load from Synology NAS Units
 
-This plugin was based on the plugin by
+This plugin was based on the plugin by febalci
 
 New version:
 Added network load of NAS. The bonded ethernet port 1 and 2 is used.
